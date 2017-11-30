@@ -7,6 +7,7 @@ import { WikiPage } from '../pages/wiki/wiki';
 import { ForumPage } from '../pages/forum/forum';
 import { HomePage } from '../pages/home/home';
 import { GalleryPage } from '../pages/gallery/gallery';
+import { TopicService } from '../app/topic/topic.service';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -34,6 +35,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    TopicService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
