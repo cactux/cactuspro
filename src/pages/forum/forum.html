@@ -1,0 +1,16 @@
+<div>
+	<h1>Forum - {{forum.name}}</h1>
+	<div class="topic" *ngFor="let topic of forum.topics;">
+		<h2 (click)="showTopic(topic.id)">{{topic.title}}</h2>
+		<div class="description">
+			{{forum.description}}
+		</div>
+	</div>
+	
+	<ion-tabs>
+		<ion-tab [root]="FR">FR</ion-tab>
+		<ion-tab [root]="PA">PA</ion-tab>
+		<ion-tab [root]="HS">HS</ion-tab>
+	</ion-tabs>
+</div>
+
