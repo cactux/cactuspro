@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { WikiPage } from '../pages/wiki/wiki';
 import { ForumPage } from '../pages/forum/forum';
 import { HomePage } from '../pages/home/home';
+import { TopicPage } from '../pages/topic/topic';
 import { GalleryPage } from '../pages/gallery/gallery';
 import { TopicService } from '../app/topic/topic.service';
 
@@ -17,6 +18,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     WikiPage,
     ForumPage,
+    TopicPage,
     HomePage,
     GalleryPage
   ],
@@ -30,6 +32,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     WikiPage,
     ForumPage,
     HomePage,
+    TopicPage,
     GalleryPage
   ],
   providers: [
