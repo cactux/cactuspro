@@ -1,3 +1,53 @@
 .topic {
 	border-bottom:solid 1px #ccc;
+    padding-right: 30px;
+    color:yellowgreen;
+}
+
+.forum {
+	padding: 0;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+}
+
+/*.forumH1 {
+	background:yellowgreen;
+	color:white;
+	padding-top:5px;
+	padding-bottom:5px;
+	margin:0;
+	text-align:center;
+}*/
+
+.bottomTabs {
+	position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: yellowgreen;
+    text-align: center;
+    left: 0;
+    height: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.bottomTabs tr td:hover {
+	background:OliveDrab;
+}
+
+.bottomTabs tr td {
+	border-right:solid 2px white;
+}
+
+.rightAlign {
+	float: right;
+    color: #aaa;
+    font-size: 16pt;
+}
+
+.topic h2 {
+
 }
