@@ -8,6 +8,7 @@ import { ForumPage } from '../pages/forum/forum';
 import { HomePage } from '../pages/home/home';
 import { TopicPage } from '../pages/topic/topic';
 import { GalleryPage } from '../pages/gallery/gallery';
+import { AngularTab } from '../app/angular-tab/angular-tab';
 import { TopicService } from '../app/topic/topic.service';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -20,7 +21,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ForumPage,
     TopicPage,
     HomePage,
-    GalleryPage
+    GalleryPage,
+    AngularTab
   ],
   imports: [
     BrowserModule,

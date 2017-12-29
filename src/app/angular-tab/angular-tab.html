@@ -1,0 +1,10 @@
+<div class="angular-tab">
+	<table class="bottomTabs">
+		<tr>
+			<ng-container class="tab" *ngFor="let tab of tabs;let $index = index;" (click)="launchEvent(tab,{})">
+				<td *ngIf="$index < max">{{tab}}</td>
+			</ng-container>
+			<td *ngIf="tabs.length > max">...</td>
+		</tr>
+	</table>
+</div>
