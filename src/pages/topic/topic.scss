@@ -1,1 +1,56 @@
+.lastmessageTopic {
+	border-bottom: solid 1px #eee;
+    margin-bottom: 25px;
+    text-align: justify;
+    padding: 10px;
+    width: 100%;
+    background: white;
+    border-radius: 5px;
+}
 
+.topic {
+    padding: 16px;
+    padding-top: 5px;
+}
+
+.lastmessageTopic table {
+	width:100%;
+	margin-bottom:20px;
+	color:yellowgreen;
+}
+
+h1,h2 {
+	color:#6e8258;
+	margin-top:0;
+}
+
+.messageTopic {
+	width:100%;
+    color:OliveDrab;
+	text-align:justify;
+}
+
+
+.reply button{
+	width: 19%;
+    padding: 5px;
+    color: white;
+    background: yellowgreen;
+	float: right;
+	height:35px;
+}
+
+.reply textarea {
+	width:80%;
+	border:none;
+	height:35px;
+}
+
+ion-app.md [padding] .scroll-content {
+	padding:0 !important;
+}
+
+.scroll-content {
+	background:#c9c87d;
+	padding:0;
+}

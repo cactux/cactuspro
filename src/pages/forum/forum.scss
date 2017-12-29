@@ -1,13 +1,52 @@
-.topic {
+.topicForum {
 	border-bottom:solid 1px #ccc;
-    padding-right: 30px;
     color:yellowgreen;
+    height:120px;
+    padding-top:10px;
+}
+
+.toolbar-background-md, .toolbar-background {
+	color:white !important;
+	background:#6e8258;
+}
+
+.toolbar-title, .back-button, .toolbar-title-md {
+	color:white !important;
+}
+
+.clear {
+	clear:both;
+}
+
+.lastMessage table {
+	text-align:right;
+}
+
+.message {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width:100%;
+    overflow: hidden;
+    color:OliveDrab;
+}
+
+.topicAuthor {
+	position:absolute;
+	right:5px;
+}
+
+.leftAlign {
+	width:90%;
+	float:left;
 }
 
 .forum {
-	padding: 0;
     margin: 0;
     width: 100%;
+    background:white;
+    height:100%;
+    padding: 16px;
+    padding-top: 5px;
     position: absolute;
 }
 
@@ -34,6 +73,16 @@
     letter-spacing: 1px;
 }
 
+.firstMessage {
+	color:yellowGreen;
+}
+
+
+
+.alignLeft {
+	text-align:left;
+}
+
 .bottomTabs tr td:hover {
 	background:OliveDrab;
 }
@@ -42,10 +91,17 @@
 	border-right:solid 2px white;
 }
 
+.lastMessage {
+	padding-bottom: 5px;
+}
+
 .rightAlign {
 	float: right;
     color: #aaa;
+    margin-left:5px;
     font-size: 16pt;
+    height:120px;
+    padding-top:50px;
 }
 
 .topic h2 {

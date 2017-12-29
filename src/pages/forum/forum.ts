@@ -10,10 +10,7 @@ import { TopicPage } from '../topic/topic';
 })
 export class ForumPage {
   forum:any;
-  
-  FR = TopicPage;
-  PA = TopicPage;
-  HS = TopicPage;
+  tabs;
 
   isLogged() {
   }
@@ -29,5 +26,6 @@ export class ForumPage {
  
   constructor(public modalCtrl: ModalController, private topicService: TopicService,public navCtrl: NavController) {
 	this.getForum();
+	this.tabs = ['FR','PA','HS','test'];
   }
 }
