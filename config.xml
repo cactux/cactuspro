@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="cactuspro.mobile" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Cactus et succulentes</name>
-    <description>The official mobile App of cactuspro.com.</description>
-    <author email="yann@cactuspro.com" href="https://www.cactuspro.com/">Yann COCHARD</author>
+    <name>Cactus et plantes succulentes</name>
+    <description>Forum, encyclopédie, photos sur les plantes grasses : succulentes et cactus - cactuspro.com</description>
+    <author email="yann@cactuspro.com" href="https://yanncochard.com/">Yann COCHARD</author>
     <author email="jeremy.denis9@hotmail.fr" href="https://fr.linkedin.com/in/j%C3%A9r%C3%A9my-denis-558306129">Jeremy DENIS</author>
     <content src="index.html" />
     <access origin="*" />

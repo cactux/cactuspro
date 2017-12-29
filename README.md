@@ -1,6 +1,6 @@
-Cactus Pro
+Cactus et plantes succulentes
 
-Cactus Pro is the official Mobile App for cactus and suculent
+Cactus Pro is the official Mobile App for cactus and succulent plants
 
 ## Main Functionalities
 
