@@ -15,9 +15,8 @@ export class ForumPage {
   isLogged() {
   }
   
-  goToTopic() {
-	console.log('coucou');
-	this.navCtrl.push(TopicPage);
+  goToTopic(id) {
+	this.navCtrl.push(TopicPage,{'id': id});
   }
   
   getForum() {	

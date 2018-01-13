@@ -7,27 +7,31 @@
 <ion-content padding>
 	<div class="forum">
 		<div class="topicForum" *ngFor="let topic of forum.topics;">
-			<div class="rightAlign" (click)="goToTopic()">
+			<div class="rightAlign" (click)="goToTopic(topic.id)">
 				<ion-icon name="ios-arrow-forward"></ion-icon>
 			</div>			
 			
 			<div class="leftAlign">
 				<div class="topicAuthor">
-					Par : Yann
+					Par : {{topic.author}}
 				</div>
-				<h2>{{topic.title}}</h2>
+				<h2>
+					<ion-icon style="color:yellowGreen" *ngIf="topic.haveNotReadMessage" name="mail"></ion-icon>
+					<ion-icon  *ngIf="!topic.haveNotReadMessage" name="mail-open"></ion-icon>
+					{{topic.title}}
+				</h2>
 				<hr/>
-				<div class="lastMessage">
+				<div class="lastMessage" *ngIf="topic.messages.length > 0">
 					<table>
 						<tr class="author">
-							<td class="alignLeft">author :</td><td>Jeremy</td>
+							<td class="alignLeft">author :</td><td>{{topic.messages[topic.messages.length - 1].author}}</td>
 						</tr>
 						<tr class="date">
-							<td class="alignLeft">last message :</td><td> 2015-12-03</td>
+							<td class="alignLeft">last message :</td><td>{{topic.messages[topic.messages.length - 1].date}}</td>
 						</tr>
 					</table>
 					<div class="message">
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including v
+						{{topic.messages[topic.messages.length - 1].text}}
 					</div>
 				</div>
 			</div>
