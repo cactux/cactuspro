@@ -1,73 +1,37 @@
 <ion-header>
   <ion-navbar>
-    <ion-title class="forumH1">Topic 1</ion-title>
+    <ion-title class="forumH1"> Cactus Pro - {{topic.title}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
-<div class="topic">
-	<h1>Welcome to Topic</h1>
-	
-	<div class="lastmessageTopic">
+<div class="topic">	
+	<div class="lastmessageTopic" *ngFor="let message of topic.messages">
 		<table>
 			<tr class="author">
-				<td class="alignLeft">author :</td><td>Jeremy</td>
+				<td class="alignLeft">author :</td><td>{{message.author}}</td>
 			</tr>
 			<tr class="date">
-				<td class="alignLeft">last messageTopic :</td><td> 2015-12-03</td>
+				<td class="alignLeft">date :</td><td> {{message.date}}</td>
 			</tr>
 		</table>
 		<div class="messageTopic">
-			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including v
-		</div>
-	</div>
-	
-	<div class="lastmessageTopic">
-		<table>
-			<tr class="author">
-				<td class="alignLeft">author :</td><td>Jeremy</td>
-			</tr>
-			<tr class="date">
-				<td class="alignLeft">last messageTopic :</td><td> 2015-12-03</td>
-			</tr>
-		</table>
-		<div class="messageTopic">
-			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including v
-		</div>
-	</div>
-	
-	<div class="lastmessageTopic">
-		<table>
-			<tr class="author">
-				<td class="alignLeft">author :</td><td>Jeremy</td>
-			</tr>
-			<tr class="date">
-				<td class="alignLeft">last messageTopic :</td><td> 2015-12-03</td>
-			</tr>
-		</table>
-		<div class="messageTopic">
-			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including v
-		</div>
-	</div>
-	
-	<div class="lastmessageTopic">
-		<table>
-			<tr class="author">
-				<td class="alignLeft">author :</td><td>Jeremy</td>
-			</tr>
-			<tr class="date">
-				<td class="alignLeft">last messageTopic :</td><td> 2015-12-03</td>
-			</tr>
-		</table>
-		<div class="messageTopic">
-			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including v
+			{{message.text}}
 		</div>
 	</div>
 	
 	<div class="reply">
-		<textarea></textarea>
-		<button>Reply</button>
+		<img [src]="base64Image" *ngIf="base64Image" />
+		
+		<textarea [(ngModel)]="reply"></textarea>
+		
+		<div class="rightPanel">
+			<div class="onePartCam" (click)="takePhoto()">
+				<ion-icon name="camera"></ion-icon>
+			</div>
+			<button (click)="sendReply()">Reply</button>
+		</div>
 	</div>
 	
 </div>

@@ -1,3 +1,22 @@
-page-home {
+.onePart {
+	width: 75px;
+    background: #6e8258;
+    height: 75px;
+    border-radius: 50%;
+    text-align:center;
+    padding-top: 20px;
+}
 
+.onePart ion-icon {
+	color:white;
+	font-size:20pt;
+}
+
+.onePart a {
+	color:white;
+}
+
+.link {
+	padding-top: 50%;
+    padding-left: calc(50% - 37px);
 }
