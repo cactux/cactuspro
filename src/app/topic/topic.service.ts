@@ -28,7 +28,7 @@ export class TopicService {
 	}
 	
 	getById(id) {
-		let params = new HttpParams().set('id', topic.id);
+		let params = new HttpParams().set('id', id);
 		return this.http.get(this.apiUrl,{'params':params});
 	}
 	

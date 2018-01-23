@@ -14,7 +14,10 @@ export class TopicPage {
   base64Image: string;
   
   getTopic() {
-	this.topic = this.topicService.getById(this.id);
+	this.topicService.getById(this.id).subscribe(success => {
+		this.topic = success[0];
+		console.log(this.topic);
+	});
   }
   
   sendReply() {

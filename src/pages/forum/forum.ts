@@ -20,7 +20,9 @@ export class ForumPage {
   }
   
   getForum() {	
-	this.forum = this.topicService.getAll();
+	this.topicService.getAll().subscribe(success => {
+		this.forum = success;
+	});
   }
  
   constructor(public modalCtrl: ModalController, private topicService: TopicService,public navCtrl: NavController) {
