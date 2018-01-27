@@ -4,7 +4,12 @@
 			<ng-container class="tab" *ngFor="let tab of tabs;let $index = index;" (click)="launchEvent(tab,{})">
 				<td *ngIf="$index < max">{{tab}}</td>
 			</ng-container>
-			<td *ngIf="tabs.length > max">...</td>
+			<td *ngIf="tabs.length > max" (click)="otherTab()">...</td>
 		</tr>
 	</table>
+	<div *ngIf="other" class="otherTab">
+		<ng-container class="tab" *ngFor="let tab of tabs;let $index = index;" (click)="launchEvent(tab,{})">
+			<div class="oneLineTab" *ngIf="$index >= max">{{tab}}</div>
+		</ng-container>
+	</div>
 </div>
