@@ -22,13 +22,16 @@
 	</div>
 	
 	<div class="reply">
-		<img [src]="base64Image" *ngIf="base64Image" />
+		<!--<img [src]="base64Image" *ngIf="base64Image" />-->
 		
 		<textarea [(ngModel)]="reply"></textarea>
 		
 		<div class="rightPanel">
-			<div class="onePartCam" (click)="takePhoto()">
+			<div class="onePartCam" (click)="takePhoto()" *ngIf="!photoToSend">
 				<ion-icon name="camera"></ion-icon>
+			</div>
+			<div class="onePartCam" (click)="viewPhoto()" *ngIf="photoToSend">
+				<ion-icon name="eye"></ion-icon>
 			</div>
 			<button (click)="sendReply()">Reply</button>
 		</div>

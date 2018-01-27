@@ -1,14 +1,14 @@
 <div class="angular-tab">
 	<table class="bottomTabs">
 		<tr>
-			<ng-container class="tab" *ngFor="let tab of tabs;let $index = index;" (click)="launchEvent(tab,{})">
-				<td *ngIf="$index < max">{{tab}}</td>
+			<ng-container class="tab" *ngFor="let tab of tabs;let $index = index;">
+				<td *ngIf="$index < max" (click)="launchEvent('tab',{'name':tab})">{{tab}}</td>
 			</ng-container>
 			<td *ngIf="tabs.length > max" (click)="otherTab()">...</td>
 		</tr>
 	</table>
 	<div *ngIf="other" class="otherTab">
-		<ng-container class="tab" *ngFor="let tab of tabs;let $index = index;" (click)="launchEvent(tab,{})">
+		<ng-container class="tab" *ngFor="let tab of tabs;let $index = index;" (click)="launchEvent('tab',{'name':tab})">
 			<div class="oneLineTab" *ngIf="$index >= max">{{tab}}</div>
 		</ng-container>
 	</div>

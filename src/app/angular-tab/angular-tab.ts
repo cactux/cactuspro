@@ -12,7 +12,7 @@ export class AngularTab implements OnInit {
 	@Input() max:any;
 	other;
 	
-	launchEvent($data,event) {
+	launchEvent(event,$data) {
 		this.events.publish(event, $data);
 	}
 	
@@ -22,6 +22,7 @@ export class AngularTab implements OnInit {
 	
 	ngOnInit(): void {
 		this.other = false;
+		this.events.publish('tab', {'name':this.tabs[0]});
     }
     
     constructor(public events: Events) {

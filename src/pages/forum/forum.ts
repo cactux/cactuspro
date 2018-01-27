@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalController } from 'ionic-angular';
 import { NavController } from 'ionic-angular';
+import { Events } from 'ionic-angular';
 import { TopicService } from '../../app/topic/topic.service';
 import { TopicPage } from '../topic/topic';
 
@@ -11,6 +12,7 @@ import { TopicPage } from '../topic/topic';
 export class ForumPage {
   forum:any;
   tabs;
+  title;
 
   isLogged() {
   }
@@ -25,8 +27,16 @@ export class ForumPage {
 	});
   }
  
-  constructor(public modalCtrl: ModalController, private topicService: TopicService,public navCtrl: NavController) {
+  constructor(public modalCtrl: ModalController, private topicService: TopicService,public navCtrl: NavController, public events: Events) {
 	this.getForum();
 	this.tabs = ['FR','PA','HS','test'];
+	this.title = '';
+	
+	this.events.subscribe('tab', (data) => {
+		
+		console.log('test');
+		console.log(data);
+		this.title = data.name;
+	});
   }
 }
