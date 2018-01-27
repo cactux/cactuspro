@@ -1,12 +1,12 @@
 <ion-header>
   <ion-navbar>
-    <ion-title class="forumH1">Forum - {{forum.name}}</ion-title>
+    <ion-title class="forumH1">Forum - {{title}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 	<div class="forum">
-		<div class="topicForum" *ngFor="let topic of forum.topics;">
+		<div class="topicForum" *ngFor="let topic of forum;">
 			<div class="rightAlign" (click)="goToTopic(topic.id)">
 				<ion-icon name="ios-arrow-forward"></ion-icon>
 			</div>			

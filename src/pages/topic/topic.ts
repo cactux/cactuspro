@@ -11,10 +11,14 @@ export class TopicPage {
   topic;
   id;
   reply;
+  photoToSend;
   base64Image: string;
   
   getTopic() {
-	this.topic = this.topicService.getById(this.id);
+	this.topicService.getById(this.id).subscribe(success => {
+		this.topic = success[0];
+		console.log(this.topic);
+	});
   }
   
   sendReply() {
@@ -27,6 +31,7 @@ export class TopicPage {
         targetHeight: 1000
     }).then((imageData) => {
         this.base64Image = "data:image/jpeg;base64," + imageData;
+        this.photoToSend = true;
     }, (err) => {
         console.log(err);
     });
@@ -35,5 +40,6 @@ export class TopicPage {
   constructor(public navCtrl: NavController,public navParams: NavParams, public topicService:TopicService, private camera: Camera) {
 	this.id = this.navParams.get('id');
 	this.getTopic();
+	this.photoToSend = false;
   }
 }

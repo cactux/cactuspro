@@ -1,35 +1,43 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { config } from '../app.conf';
 
 @Injectable()
 export class TopicService {
   private topics:any;
   private _db;
+  private apiUrl;
 
 	add(topic) {
-	}   
+		return this.http.post(this.apiUrl,topic);
+	}
+	
+	viewTopic(topic) {
+		topic.haveNotReadMessage = true;
+		return this.update(topic);
+	}
 
 	update(topic) {
+		let params = new HttpParams().set('id', topic.id);
+		return this.http.put(this.apiUrl,topic,{'params':params});
 	}
 
 	delete(topic) {
+		let params = new HttpParams().set('id', topic.id);
+		return this.http.delete(this.apiUrl,{'params':params});
 	}
 	
 	getById(id) {
-		let ret;
-		this.topics.topics.forEach((topic) => {
-			if (topic.id == id) {
-				ret = topic;
-				return;
-			}
-		});
-		return ret;
+		let params = new HttpParams().set('id', id);
+		return this.http.get(this.apiUrl,{'params':params});
 	}
 	
 	getAll() {
-		return this.topics;
+		return this.http.get(this.apiUrl);
 	}
   
-	constructor() {
+	constructor(private http: HttpClient) {
+		this.apiUrl = config.api + '/topics';
 		this.topics = {
 			'name':'general',
 			'topics':[

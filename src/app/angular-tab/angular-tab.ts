@@ -10,12 +10,19 @@ import { Events } from 'ionic-angular';
 export class AngularTab implements OnInit {
 	@Input() tabs:any;
 	@Input() max:any;
+	other;
 	
-	launchEvent($data,event) {
+	launchEvent(event,$data) {
 		this.events.publish(event, $data);
 	}
-		
+	
+	otherTab() {
+		this.other = !this.other;
+	}
+	
 	ngOnInit(): void {
+		this.other = false;
+		this.events.publish('tab', {'name':this.tabs[0]});
     }
     
     constructor(public events: Events) {
