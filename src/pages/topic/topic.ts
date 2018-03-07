@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { TopicService } from '../../app/topic/topic.service';
 import { NavController, NavParams } from 'ionic-angular';
+import { ModalController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { ViewPhoto } from '../view-photo/view-photo';
 
 @Component({
   templateUrl: 'topic.html',
@@ -25,6 +27,11 @@ export class TopicPage {
 	this.topicService.add(this.reply);
   }
   
+  viewPhoto() {
+	let photoModal = this.modalCtrl.create(ViewPhoto, { photo: this.base64Image });
+   photoModal.present();
+  }
+  
   takePhoto () {
     this.camera.getPicture({
         targetWidth: 1000,
@@ -37,7 +44,7 @@ export class TopicPage {
     });
   }
  
-  constructor(public navCtrl: NavController,public navParams: NavParams, public topicService:TopicService, private camera: Camera) {
+  constructor(public navCtrl: NavController,public modalCtrl: ModalController,public navParams: NavParams, public topicService:TopicService, private camera: Camera) {
 	this.id = this.navParams.get('id');
 	this.getTopic();
 	this.photoToSend = false;
