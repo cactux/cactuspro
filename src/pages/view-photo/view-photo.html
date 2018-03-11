@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+	<button class="myBackButton" (click)="closePopup()"><ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon></button>
+    <ion-title>Cactus Pro - Photos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="photos == undefined || photos.length == 0">
+	No photo to display please select ones
+  </div>
+  <ng-container *ngIf="photos != undefined &&  photos.length > 0">
+	  <div class="onePhoto" *ngFor="let photo of photos">
+		<img src="{{photo}}"/>
+	  </div>
+  </ng-container>
+</ion-content>

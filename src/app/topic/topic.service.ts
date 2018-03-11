@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { config } from '../app.conf';
+import { ToastController } from 'ionic-angular';
 
 @Injectable()
 export class TopicService {
@@ -9,34 +10,93 @@ export class TopicService {
   private apiUrl;
 
 	add(topic) {
-		return this.http.post(this.apiUrl,topic);
+		let promise = this.http.post(this.apiUrl,topic);
+		promise.subscribe(
+		  data => {},
+		  err => {
+			this.errorAfterAPI(err);
+		  }
+		);
+		return promise;
 	}
 	
 	viewTopic(topic) {
 		topic.haveNotReadMessage = true;
-		return this.update(topic);
+		let promise = this.update(topic);
+		promise.subscribe(
+		  data => {},
+		  err => {
+			this.errorAfterAPI(err);
+		  }
+		);
+		
+		return promise;
 	}
 
 	update(topic) {
 		let params = new HttpParams().set('id', topic.id);
-		return this.http.put(this.apiUrl,topic,{'params':params});
+		let promise = this.http.put(this.apiUrl,topic,{'params':params});
+		promise.subscribe(
+		  data => {},
+		  err => {
+			this.errorAfterAPI(err);
+		  }
+		);
+		
+		return promise;
 	}
 
 	delete(topic) {
 		let params = new HttpParams().set('id', topic.id);
-		return this.http.delete(this.apiUrl,{'params':params});
+		let promise = this.http.delete(this.apiUrl,{'params':params});
+		promise.subscribe(
+		  data => {},
+		  err => {
+			this.errorAfterAPI(err);
+		  }
+		);
+		
+		return promise;
 	}
 	
 	getById(id) {
 		let params = new HttpParams().set('id', id);
-		return this.http.get(this.apiUrl,{'params':params});
+		let promise = this.http.get(this.apiUrl,{'params':params});
+		promise.subscribe(
+		  data => {console.log(data)},
+		  err => {
+			this.errorAfterAPI(err);
+		  }
+		);
+		
+		return promise;
 	}
 	
 	getAll() {
-		return this.http.get(this.apiUrl);
+		let promise = this.http.get(this.apiUrl);
+		promise.subscribe(
+		  data => {console.log(data)},
+		  err => {
+			this.errorAfterAPI(err);
+		  }
+		);
+		
+		return promise;
+	}
+	
+	errorAfterAPI(err) {
+		console.log(err.status);
+		let toast = this.toastCtrl.create({
+			message: 'Server unavailable !!!',
+			duration: 3000,
+			position: 'bottom',
+			cssClass: 'errorToast'
+		});
+
+		toast.present();
 	}
   
-	constructor(private http: HttpClient) {
+	constructor(private http: HttpClient,private toastCtrl: ToastController) {
 		this.apiUrl = config.api + '/topics';
 		this.topics = {
 			'name':'general',

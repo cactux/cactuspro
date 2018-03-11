@@ -1,4 +1,4 @@
 export const config = {
   production: false,
-  api: 'http://localhost/sample/entrypoint.php'
+  api: 'http://192.168.1.78/sample/entrypoint.php'
 };

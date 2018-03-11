@@ -7,36 +7,38 @@
 <ion-content padding>
 
 <div class="topic" *ngIf="topic != undefined">	
-	<div class="lastmessageTopic" *ngFor="let message of topic.messages">
-		<table>
-			<tr class="author">
-				<td class="alignLeft">author :</td><td>{{message.author}}</td>
-			</tr>
-			<tr class="date">
-				<td class="alignLeft">date :</td><td> {{message.date}}</td>
-			</tr>
-		</table>
-		<div class="messageTopic">
-			{{message.text}}
-		</div>
-	</div>
-	
-	<div class="reply">
-		<!--<img [src]="base64Image" *ngIf="base64Image" />-->
-		
-		<textarea [(ngModel)]="reply"></textarea>
-		
-		<div class="rightPanel">
-			<div class="onePartCam" (click)="takePhoto()" *ngIf="!photoToSend">
-				<ion-icon name="camera"></ion-icon>
+	<zoom-area>
+		<div class="lastmessageTopic" *ngFor="let message of topic.messages">
+			<table>
+				<tr class="author">
+					<td class="alignLeft">author :</td><td>{{message.author}}</td>
+				</tr>
+				<tr class="date">
+					<td class="alignLeft">date :</td><td> {{message.date}}</td>
+				</tr>
+			</table>
+			<div class="messageTopic">
+				{{message.text}}
 			</div>
-			<div class="onePartCam" (click)="viewPhoto()" *ngIf="photoToSend">
-				<ion-icon name="eye"></ion-icon>
-			</div>
-			<button (click)="sendReply()">Reply</button>
 		</div>
-	</div>
-	
+	</zoom-area>
+		
+		<div class="reply">
+			<!--<img [src]="base64Image" *ngIf="base64Image" />-->
+			
+			<textarea [(ngModel)]="reply"></textarea>
+			
+			<div class="rightPanel">
+				<div class="onePartCam" (click)="pickPhoto()">
+					<ion-icon name="camera"></ion-icon>
+				</div>
+				<div class="onePartCam" style="margin-right:5px" (click)="viewPhoto()">
+					<ion-icon name="eye"></ion-icon>
+					<div class="nbPhoto" *ngIf="photos != undefined && photos.length > 0">{{photos.length}}</div>
+				</div>
+				<button (click)="sendReply()">Reply</button>
+			</div>
+		</div>
 </div>
 
 
