@@ -26,15 +26,22 @@
 	background-color:#6e8258 !important;
 }
 
+.nbPhoto {    
+	border-radius: 50%;
+    background: red;
+    color: white;
+    width: 15px;
+}
+
 .onePartCam {
-	width: 45px;
-    background: #6e8258;
+	width: 45%;
+    float: right;
+    border: #6e8258 solid 2px;
     height: 45px;
     color: white;
-    border-radius: 50%;
+    border-radius: 5px;
     text-align: center;
     padding-top: 14px;
-    margin-left:21%;
 }
 
 .lastmessageTopic table {

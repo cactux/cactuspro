@@ -29,11 +29,12 @@
 			<textarea [(ngModel)]="reply"></textarea>
 			
 			<div class="rightPanel">
-				<div class="onePartCam" (click)="takePhoto()" *ngIf="photoToSend">
+				<div class="onePartCam" (click)="pickPhoto()">
 					<ion-icon name="camera"></ion-icon>
 				</div>
-				<div class="onePartCam" (click)="viewPhoto()" *ngIf="!photoToSend">
+				<div class="onePartCam" style="margin-right:5px" (click)="viewPhoto()">
 					<ion-icon name="eye"></ion-icon>
+					<div class="nbPhoto" *ngIf="photos != undefined && photos.length > 0">{{photos.length}}</div>
 				</div>
 				<button (click)="sendReply()">Reply</button>
 			</div>

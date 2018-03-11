@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ViewController, NavParams } from 'ionic-angular';
 
 
 @Component({
@@ -8,8 +8,14 @@ import { NavController } from 'ionic-angular';
 })
 export class ViewPhoto {
 
-  constructor(public navCtrl: NavController) {
+  photos;
 
+  closePopup() {
+    this.viewController.dismiss();
+  }
+
+  constructor(public navCtrl: NavController, public viewController: ViewController, params: NavParams) {
+	this.photos = params.get('photos');
   }
 
 }
